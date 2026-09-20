@@ -1,0 +1,103 @@
+const API_URL = "http://localhost:5000/api/auth";
+
+export const registerUser = async (userData) => {
+
+  const response = await fetch(`${API_URL}/register`, {
+    method: "POST",
+
+    headers: {
+      "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify(userData)
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Registration failed");
+  }
+
+  return data;
+};
+
+
+export const loginUser = async (loginData) => {
+
+  const response = await fetch(`${API_URL}/login`, {
+    method: "POST",
+
+    headers: {
+      "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify(loginData)
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Login failed");
+  }
+
+  return data;
+};
+
+export const getCurrentUser = async () => {
+
+    const token = localStorage.getItem("token");
+
+    const response = await fetch(
+        "http://localhost:5000/api/auth/me",
+        {
+            method: "GET",
+
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+        throw new Error(
+            data.message || "Failed to get user"
+        );
+    }
+
+    return data;
+};
+
+export const updateProfile = async (name, mobile) => {
+
+    const token = localStorage.getItem("token");
+
+    const response = await fetch(
+        "http://localhost:5000/api/auth/profile",
+        {
+            method: "PUT",
+
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+
+            body: JSON.stringify({
+                name,
+                mobile
+            })
+        }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+        throw new Error(
+            data.message || "Failed to update profile"
+        );
+    }
+
+    return data;
+};
