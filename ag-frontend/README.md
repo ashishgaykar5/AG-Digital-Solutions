@@ -1,16 +1,103 @@
-# React + Vite
+# AG Digital Solutions
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A full-stack digital solutions website built with React, Node.js, Express.js, and MongoDB.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive and modern website
+- Home, About, Services, and Contact pages
+- User registration and login
+- JWT-based authentication
+- Protected dashboard
+- User profile management
+- Password hashing with bcrypt
+- REST API integration
+- MongoDB database integration
+- Reusable React components
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
+- React.js
+- React Router
+- JavaScript
+- HTML5
+- CSS3
+- Vite
 
-## Expanding the Oxlint configuration
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JSON Web Token
+- bcrypt
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Tools
+- Git and GitHub
+- Visual Studio Code
+- MongoDB Compass
+- Postman
+
+## 📁 Project Structure
+
+```text
+AG_dev/
+├── ag-frontend/
+└── ag-backend/
+```
+
+## ⚙️ Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/ashishgaykar5/AG-Digital-Solutions.git
+cd AG-Digital-Solutions
+```
+
+### Run the frontend
+
+```bash
+cd ag-frontend
+npm install
+npm run dev
+```
+
+### Run the backend
+
+Open another terminal:
+
+```bash
+cd ag-backend
+npm install
+npm start
+```
+
+## 🔐 Environment Variables
+
+Create a `.env` file inside `ag-backend`:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secure_jwt_secret
+```
+
+> Never upload your `.env` file or secret keys to GitHub.
+
+## 🌐 Deployment
+
+- Frontend: Vercel
+- Backend: To be deployed
+- Database: MongoDB Atlas
+
+## 👨‍💻 Author
+
+**Ashish Gaykar**
+
+GitHub: [ashishgaykar5](https://github.com/ashishgaykar5)
+
+## 📄 License
+
+This project is created for educational and portfolio purposes.
